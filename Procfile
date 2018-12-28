@@ -1,1 +1,1 @@
-"web: gunicorn matome.wsgi --log-file -" 
+web: gunicorn matome.wsgi --log-file -
