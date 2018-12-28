@@ -1,0 +1,26 @@
+{% extends "rest/base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'work/style.css' %}">
+{% if latest_question_list %}
+    <ul class="list-group">
+        <li class="list-group-item active">Question</li>
+        {% for question in latest_question_list %}
+            <li class="list-group-item"><a href="{% url 'work:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}    
+    </ul>
+{% else %}
+    <p>No work are available.</p>
+{% endif %}
+
+{% endblock content %}
+
+<li class="list-group-item list-group-item-success">A simple success list group item</li>
+
+<!-- <ul class="list-group">
+        <li class="list-group-item active">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul> -->

@@ -1,0 +1,28 @@
+{% extends 'rest/base.html' %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form action="{% url 'seo1' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="model" class="col-sm-1 col-form-label">Keyword</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control sbc_field" name="keyword" placeholder="lalaland"/>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary" name='action' value="save">put</button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+{% endblock %}
