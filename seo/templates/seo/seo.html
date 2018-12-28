@@ -10,12 +10,12 @@
                     <form action="{% url 'seo1' %}" method="POST" enctype="multipart/form-data">
                      {% csrf_token %}
                      <div class="form-group row">
-                         <label for="model" class="col-sm-1 col-form-label">Keyword</label>
+                         <label for="model" class="col-sm-1 col-form-label">Word</label>
                          <div class="col-sm-3">
                              <input type="text" class="form-control sbc_field" name="keyword" placeholder="lalaland"/>
     
                          </div>
-                         <button type="submit" class="btn btn-primary" name='action' value="save">put</button>
+                         <button type="submit" class="btn btn-primary" name='action' value="save">Put</button>
                     </div>
                     </form> 
                 </div>
