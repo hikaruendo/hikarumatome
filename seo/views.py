@@ -18,7 +18,7 @@ def seo1(request):
     #検索順位取得処理
     if search_url_keyword and search_url_keyword.strip():
         #Google検索の実施
-        search_url = 'https://www.google.co.jp/search?hl=ja&num=15&q=' + search_url_keyword
+        search_url = 'https://www.google.co.jp/search?hl=ja&num=10&q=' + search_url_keyword
         res_google = requests.get(search_url)
         res_google.raise_for_status()
         #BeautifulSoupで掲載サイトのURLを取得
@@ -27,7 +27,7 @@ def seo1(request):
         
         result = []
         for i in range(len(link_google)):
-            time.sleep(2)
+            time.sleep(1)
             #なんか変な文字が入るので除く
             site_url = link_google[i].get('href').split('&sa=U&')[0].replace('/url?q=', '')
             site_title=bs4_google.select('div > h3.r > a')[i].text#textで中身抽出。stringでもいいけど今回はnoneが返る
