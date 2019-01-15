@@ -18,7 +18,7 @@ def seo1(request):
     #検索順位取得処理
     if search_url_keyword and search_url_keyword.strip():
         #Google検索の実施
-        search_url = 'https://www.google.co.jp/search?hl=ja&num=25&q=' + search_url_keyword
+        search_url = 'https://www.google.co.jp/search?hl=ja&num=10&q=' + search_url_keyword
         res_google = requests.get(search_url)
         res_google.raise_for_status()
         #BeautifulSoupで掲載サイトのURLを取得
