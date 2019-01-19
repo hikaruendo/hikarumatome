@@ -27,7 +27,7 @@ def seo1(request):
         
         result = []
         for i in range(len(link_google)):
-            time.sleep(1)
+            time.sleep(2)
             #なんか変な文字が入るので除く
             site_url = link_google[i].get('href').split('&sa=U&')[0].replace('/url?q=', '')
             site_title=bs4_google.select('div > h3.r > a')[i].text#textで中身抽出。stringでもいいけど今回はnoneが返る
